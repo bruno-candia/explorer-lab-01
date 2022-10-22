@@ -25,13 +25,6 @@ async function setCardType(type) {
   ccBgColor01.setAttribute("stop-color", colors[type][0])
   ccBgColor02.setAttribute("stop-color", colors[type][1])
   ccLogo.setAttribute("src", `cc-${type}.svg`)
-  if (type !== "default") {
-    ccLogo.setAttribute("style", `opacity: 0;`)
-    for (let opacity = 0; opacity <= 50; opacity++) {
-      await sleep(20)
-      ccLogo.setAttribute("style", `opacity: ${opacity / 50};`)
-    }
-  }
 }
 
 globalThis.setCardType = setCardType
